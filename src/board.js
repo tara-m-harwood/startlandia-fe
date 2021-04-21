@@ -8,6 +8,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import Space from './Space';
 import './board.css';
 
 class Board extends React.Component {
@@ -44,7 +45,7 @@ class Board extends React.Component {
             // className={this.isActive(id) ? 'active' : ''}
             onClick={() => this.onClick(id)}
           >
-            {this.props.G.cells[id]}
+            <h4>{this.props.G.cells[id]}</h4>
           </td>
         );
       }

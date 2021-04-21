@@ -26,11 +26,19 @@
 //   return positions.map(isRowComplete).some(i => i === true);
 // }
 
-const TicTacToe = {
-  name: "tic-tac-toe",
+let initCells = () => {
+  let spaces = Array(12).fill(null)
+  for(let i=0; i<spaces.length; i++){
+    spaces[i] = i;
+  }
+  return spaces;
+}
+
+const Startlandia = {
+  name: "startlandia",
 
   setup: () => ({
-    cells: Array(12).fill(null)
+    cells: initCells()
   }),
 
   moves: {
@@ -65,4 +73,4 @@ const TicTacToe = {
   // }
 };
 
-export default TicTacToe;
+export default Startlandia;

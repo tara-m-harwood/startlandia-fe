@@ -32,9 +32,7 @@ class Board extends React.Component {
   }
 
   onClick = id => {
-    if (this.isActive(id)) {
-      this.props.moves.clickCell(id);
-    }
+    this.props.moves.clickCell(id);
   };
 
   // isActive(id) {
@@ -55,7 +53,7 @@ class Board extends React.Component {
             className={(id===4||id===5) ? "inner" : "outer"}
             onClick={() => this.onClick(id)}
           >
-            <Space className="inner" id={id}/>
+            <Space spaceData={this.props.G.spaces[id]} spaceNum={id}/>
           </td>
         );
       }

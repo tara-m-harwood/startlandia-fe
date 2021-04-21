@@ -26,28 +26,42 @@
 //   return positions.map(isRowComplete).some(i => i === true);
 // }
 
-let initCells = () => {
-  let spaces = Array(12).fill(null)
+let initSpaces = () => {
+  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'' })
   for(let i=0; i<spaces.length; i++){
-    spaces[i] = i;
+    spaces[i].top = "top";
+    spaces[i].bottom = "badonkdonk";
+    spaces[i].leftLower = "P0";
+    spaces[i].rightLower = "P1";
   }
+  console.log(spaces)
   return spaces;
+}
+
+let promptUser = () =>  {
+  return prompt("action rule", "draw a monster")
 }
 
 const Startlandia = {
   name: "startlandia",
 
   setup: () => ({
-    cells: initCells()
+    spaces: initSpaces()
   }),
 
   moves: {
-    clickCell(G, ctx, id) {
-      if (G.cells[id] === null) {
-        G.cells[id] = ctx.currentPlayer;
-      }
-    }
-  },
+    rollDie: (G, ctx) => {
+        G.dieRoll = ctx.random.D6();
+        G.spaces[5].top = G.dieRoll
+    },
+
+    clickCell: (G, ctx, id) => {
+        console.log("click", id)
+        alert("Hi Tara!")
+        G.spaces[id].bottom = promptUser(id)
+      }    
+    },
+
 
   // turn: { moveLimit: 1 },
 

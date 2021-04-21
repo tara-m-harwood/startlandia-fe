@@ -1,2 +1,2 @@
-# standlandia-boardgame-io
+# startlandia-boardgame-io
 Created with CodeSandbox

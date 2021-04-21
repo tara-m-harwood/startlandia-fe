@@ -21,6 +21,16 @@ class Board extends React.Component {
     isMultiplayer: PropTypes.bool,
   };
 
+  getSpaceStyleClasses = (id) => {
+    let spaceClasses= ['space'];
+    if(id===14){
+        spaceClasses.push('inner')
+    } else {
+        spaceClasses.push('outer')
+    }
+    return spaceClasses
+  }
+
   onClick = id => {
     if (this.isActive(id)) {
       this.props.moves.clickCell(id);
@@ -42,11 +52,10 @@ class Board extends React.Component {
         cells.push(
           <td
             key={id}
-            // className={this.isActive(id) ? 'active' : ''}
+            className={(id===4||id===5) ? "inner" : "outer"}
             onClick={() => this.onClick(id)}
           >
-            {/* <h4>{this.props.G.cells[id]}</h4> */}
-            <Space id={id}/>
+            <Space className="inner" id={id}/>
           </td>
         );
       }

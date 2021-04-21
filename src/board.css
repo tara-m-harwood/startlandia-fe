@@ -11,6 +11,13 @@
   font-family: monospace;
 }
 
+.inner {
+  background-color: blue;
+}
+.outer {
+  background-color:orange;
+}
+
 #winner {
   margin-top: 25px;
   width: 168px;

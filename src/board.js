@@ -45,7 +45,8 @@ class Board extends React.Component {
             // className={this.isActive(id) ? 'active' : ''}
             onClick={() => this.onClick(id)}
           >
-            <h4>{this.props.G.cells[id]}</h4>
+            {/* <h4>{this.props.G.cells[id]}</h4> */}
+            <Space id={id}/>
           </td>
         );
       }

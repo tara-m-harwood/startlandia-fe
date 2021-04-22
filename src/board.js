@@ -76,7 +76,7 @@ class Board extends React.Component {
     // }
 
     return (
-      <div>
+      <div id="board-container">
         <table id="board">
           <tbody>{tbody}</tbody>
         </table>

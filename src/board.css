@@ -6,6 +6,17 @@
  * https://opensource.org/licenses/MIT.
  */
 
+* {
+  margin: auto 0;
+}
+
+#board-container {
+  background-color: palegreen;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
 #board {
   border-collapse: collapse;
   font-family: monospace;
@@ -17,20 +28,21 @@
   text-align: center;
 }
 
-p { 
-  margin: 10px
+table {
+  table-layout: fixed;
+
 }
+
 
 td {
   text-align: center;
   font-weight: bold;
   font-size: 22px;
   color: #555;
-  width: 250px;
-  height: 150px;
   margin: 10px;
   border: 3px solid #aaa;
   background: #fff;
+  overflow: hidden;
 }
 
 td.inner {
@@ -48,4 +60,8 @@ td.active {
 
 td.active:hover {
   background: #eeffff;
+}
+
+p { 
+  margin: 10px
 }

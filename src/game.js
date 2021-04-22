@@ -27,12 +27,17 @@ const Startlandia = {
   moves: {
     rollDie: (G, ctx) => {
         G.dieRoll = ctx.random.D6();
-        G.spaces[5].top = G.dieRoll;
+        G.spaces[6].bottom = G.dieRoll;
     },
 
     clickCell: (G, ctx, id) => {
-      if(id===4){
+      if(id===0){
+        alert("You have reached Startlandia!")
+      } else if (id===5){
         ctx.events.endTurn();
+      } else if (id===6){
+        G.dieRoll = ctx.random.D6();
+        G.spaces[6].bottom = G.dieRoll;
       } else {
         G.spaces[id].bottom = promptUser(id);
       }    

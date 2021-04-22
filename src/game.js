@@ -1,19 +1,16 @@
 let initSpaces = () => {
   let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'' })
-  let i = 0;
-  spaces[i] = {top: 'A', bottom:'A', leftLower:'A', rightLower:'A' }
-  spaces[i+1] = {top: 'B', bottom:'B', leftLower:'B', rightLower:'B' }
-  return spaces;
-}
+  // let i = 0;
+  // spaces[i] = {top: 'A', bottom:'A', leftLower:'A', rightLower:'A' }
+  // spaces[i+1] = {top: 'B', bottom:'B', leftLower:'B', rightLower:'B' }
 
-let specialSpaces = (i) => {
-  let answer = "";
-  if(i===5){
-    answer="change"
-  } else {
-    answer="default"
+  for(let i=0; i<spaces.length; i++){
+    spaces[i] = {top: '', bottom:'blank', leftLower:'', rightLower:'' }
   }
-  return answer
+  spaces[0] = {top: '', bottom:'Startlandia', leftLower:'', rightLower:'' }
+  spaces[5] = {top: 'end turn', bottom:'', leftLower:'', rightLower:'' }
+  spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'' }
+  return spaces;
 }
 
 let promptUser = () =>  {

@@ -17,7 +17,9 @@
   text-align: center;
 }
 
-p { margin: 10px}
+p { 
+  margin: 10px
+}
 
 td {
   text-align: center;

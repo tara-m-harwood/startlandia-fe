@@ -1,15 +1,15 @@
 let initSpaces = () => {
-  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'' })
+  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'', className:'' })
   // let i = 0;
   // spaces[i] = {top: 'A', bottom:'A', leftLower:'A', rightLower:'A' }
   // spaces[i+1] = {top: 'B', bottom:'B', leftLower:'B', rightLower:'B' }
 
   for(let i=0; i<spaces.length; i++){
-    spaces[i] = {top: 'click', bottom:'to open me', leftLower:'', rightLower:'' }
+    spaces[i] = {top: 'open me', bottom:'', leftLower:'', rightLower:'', className: 'space' }
   }
-  spaces[0] = {top: 'Startlandia', bottom:'stop for rest', leftLower:'', rightLower:'' }
-  spaces[5] = {top: 'end turn', bottom:'', leftLower:'', rightLower:'' }
-  spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'' }
+  spaces[0] = {top: 'Startlandia', bottom:'~ rest here ~', leftLower:'', rightLower:'', className: 'space startlandia'}
+  spaces[5] = {top: 'switch player', bottom:'🦋', leftLower:'', rightLower:'', className: 'space switch' }
+  spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'', className: 'space dice' }
   return spaces;
 }
 
@@ -42,6 +42,7 @@ const Startlandia = {
 
       if(id!==5 && id!==6){
         ctx.currentPlayer==="0" ? G.positions.player1 = id : G.positions.player2 = id
+        ctx.currentPlayer==="0" ? G.spaces[5].bottom = "🦋" : G.spaces[5].bottom = "🦄"
       }   
 
       if (id===5){
@@ -51,7 +52,7 @@ const Startlandia = {
         G.dieRoll = ctx.random.D6();
         G.spaces[6].bottom = G.dieRoll;
 
-      } else if (id!==0 && G.spaces[id].bottom==='blank'){
+      } else if (id!==0 && G.spaces[id].bottom===''){
         G.spaces[id].top = getActionRule(id);
         G.spaces[id].bottom = getMovementRule(id);
       }

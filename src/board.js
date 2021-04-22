@@ -1,11 +1,3 @@
-/*
- * Copyright 2017 The boardgame.io Authors.
- *
- * Use of this source code is governed by a MIT-style
- * license that can be found in the LICENSE file or at
- * https://opensource.org/licenses/MIT.
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Space from './Space';
@@ -23,7 +15,9 @@ class Board extends React.Component {
 
   getSpaceStyleClasses = (id) => {
     let spaceClasses= ['space'];
-    if(id===14){
+    if(id===0){
+        spaceClasses.push('startlandia')
+    } else if(id===14){
         spaceClasses.push('inner')
     } else {
         spaceClasses.push('outer')

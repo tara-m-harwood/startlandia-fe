@@ -17,22 +17,26 @@
   text-align: center;
 }
 
+p { margin: 10px}
+
 td {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 22px;
   color: #555;
   width: 250px;
   height: 150px;
+  margin: 10px;
   border: 3px solid #aaa;
   background: #fff;
 }
 
 td.inner {
-  background-color: blue;
+  background-color: lightblue;
 }
 td.outer {
-  background-color:orange;
+  background-color:palegoldenrod;
+  margin: 5px;
 }
 
 td.active {

@@ -46,11 +46,11 @@ class Board extends React.Component {
     for (let i = 0; i < 3; i++) {
       let cells = [];
       for (let j = 0; j < 4; j++) {
-        const id = 3 * i + j;
+        const id = 4 * i + j;
         cells.push(
           <td
             key={id}
-            className={(id===4||id===5) ? "inner" : "outer"}
+            className={(id===5||id===6) ? "inner" : "outer"}
             onClick={() => this.onClick(id)}
           >
             <Space spaceData={this.props.G.spaces[id]} spaceNum={id}/>

@@ -11,7 +11,7 @@
 }
 
 #board-container {
-  background-color: palegreen;
+  background-color:#70C1E4;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -28,28 +28,21 @@
   text-align: center;
 }
 
-table {
-  table-layout: fixed;
-
-}
-
-
 td {
   text-align: center;
   font-weight: bold;
   font-size: 22px;
-  color: #555;
+  color: #6d0191;
   margin: 10px;
   border: 3px solid #aaa;
-  background: #fff;
   overflow: hidden;
 }
 
 td.inner {
-  background-color: lightblue;
+  background-color: #92F1F2;
 }
 td.outer {
-  background-color:palegoldenrod;
+  background-color: #CAB4DA;
   margin: 5px;
 }
 
@@ -62,6 +55,10 @@ td.active:hover {
   background: #eeffff;
 }
 
-p { 
-  margin: 10px
+p {
+  font-family: 'Kaushan Script';
+  font-size: 48px; 
+  margin: 10px;
+  height: 10vw;
+  overflow: hidden;
 }

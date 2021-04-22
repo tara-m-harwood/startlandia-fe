@@ -5,9 +5,9 @@ let initSpaces = () => {
   // spaces[i+1] = {top: 'B', bottom:'B', leftLower:'B', rightLower:'B' }
 
   for(let i=0; i<spaces.length; i++){
-    spaces[i] = {top: '', bottom:'blank', leftLower:'', rightLower:'' }
+    spaces[i] = {top: 'click', bottom:'to open me', leftLower:'', rightLower:'' }
   }
-  spaces[0] = {top: '', bottom:'Startlandia', leftLower:'', rightLower:'' }
+  spaces[0] = {top: 'Startlandia', bottom:'stop for rest', leftLower:'', rightLower:'' }
   spaces[5] = {top: 'end turn', bottom:'', leftLower:'', rightLower:'' }
   spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'' }
   return spaces;

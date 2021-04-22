@@ -53,7 +53,12 @@ class Board extends React.Component {
             className={(id===5||id===6) ? "inner" : "outer"}
             onClick={() => this.onClick(id)}
           >
-            <Space spaceData={this.props.G.spaces[id]} spaceNum={id}/>
+            <Space
+              spaceNum={id} 
+              spaceData={this.props.G.spaces[id]}
+              player1={this.props.G.positions.player1}
+              player2={this.props.G.positions.player2}
+            />
           </td>
         );
       }

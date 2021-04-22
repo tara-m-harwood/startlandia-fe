@@ -21,7 +21,11 @@ const Startlandia = {
   name: "startlandia",
 
   setup: () => ({
-    spaces: initSpaces()
+    spaces: initSpaces(),
+    positions: {
+      player1: 0,
+      player2: 0,
+    }
   }),
 
   moves: {
@@ -31,6 +35,11 @@ const Startlandia = {
     },
 
     clickCell: (G, ctx, id) => {
+      for(let i=0; i<G.spaces.length; i++){
+        G.spaces[i].leftLower =''
+      }
+      G.spaces[id].leftLower = ctx.currentPlayer
+
       if(id===0){
         alert("You have reached Startlandia!")
       } else if (id===5){
@@ -40,7 +49,13 @@ const Startlandia = {
         G.spaces[6].bottom = G.dieRoll;
       } else {
         G.spaces[id].bottom = promptUser(id);
-      }    
+      }
+    
+      if(ctx.currentPlayer===0){
+        G.positions.player1 = id
+      } else {
+        G.positions.player2 = id
+      }
     },
   },  
 

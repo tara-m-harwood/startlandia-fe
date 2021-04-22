@@ -1,2 +1,2 @@
-# startlandia-boardgame-io
-Created with CodeSandbox
+# Startlandia
+## invent your own magic

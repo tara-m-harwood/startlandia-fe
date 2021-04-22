@@ -56,8 +56,8 @@ class Board extends React.Component {
             <Space
               spaceNum={id} 
               spaceData={this.props.G.spaces[id]}
-              player1={this.props.G.positions.player1}
-              player2={this.props.G.positions.player2}
+              player1={this.props.G.positions.player1===id ? "🦋" : ""}
+              player2={this.props.G.positions.player2===id ? "🦄" : ""}
             />
           </td>
         );

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 
-
 export default class Space extends Component {
 
     render() {
@@ -11,8 +10,8 @@ export default class Space extends Component {
                 <p>{this.props.spaceData.top}</p>
                 <p>{this.props.spaceData.bottom}</p>
                 <div style={{display: "flex", justifyContent: "space-evenly"}}>
-                    <p>{this.props.player1}</p>
-                    <p>{this.props.player2}</p>
+                    <h1>{this.props.player1}</h1>
+                    <h1>{this.props.player2}</h1>
                 </div>    
             </div>
         )

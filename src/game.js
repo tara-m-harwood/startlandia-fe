@@ -21,11 +21,11 @@ const Startlandia = {
   name: "startlandia",
 
   setup: () => ({
-    spaces: initSpaces(),
     positions: {
       player1: 0,
       player2: 0,
-    }
+    },
+    spaces: initSpaces(),
   }),
 
   moves: {
@@ -35,27 +35,20 @@ const Startlandia = {
     },
 
     clickCell: (G, ctx, id) => {
-      for(let i=0; i<G.spaces.length; i++){
-        G.spaces[i].leftLower =''
-      }
-      G.spaces[id].leftLower = ctx.currentPlayer
 
-      if(id===0){
-        alert("You have reached Startlandia!")
-      } else if (id===5){
+      if(id!==5 && id!==6){
+        ctx.currentPlayer==="0" ? G.positions.player1 = id : G.positions.player2 = id
+      }   
+
+      if (id===5){
         ctx.events.endTurn();
       } else if (id===6){
         G.dieRoll = ctx.random.D6();
         G.spaces[6].bottom = G.dieRoll;
-      } else {
+      } else if (id!==0 && G.spaces[id].bottom==='blank'){
         G.spaces[id].bottom = promptUser(id);
       }
-    
-      if(ctx.currentPlayer===0){
-        G.positions.player1 = id
-      } else {
-        G.positions.player2 = id
-      }
+
     },
   },  
 

@@ -13,8 +13,12 @@ let initSpaces = () => {
   return spaces;
 }
 
-let promptUser = () =>  {
+let getActionRule = () =>  {
   return prompt("action rule", "draw a monster")
+}
+
+let getMovementRule = () =>  {
+  return prompt("movement rule", "2 spaces forward")
 }
 
 const Startlandia = {
@@ -42,11 +46,14 @@ const Startlandia = {
 
       if (id===5){
         ctx.events.endTurn();
+
       } else if (id===6){
         G.dieRoll = ctx.random.D6();
         G.spaces[6].bottom = G.dieRoll;
+
       } else if (id!==0 && G.spaces[id].bottom==='blank'){
-        G.spaces[id].bottom = promptUser(id);
+        G.spaces[id].top = getActionRule(id);
+        G.spaces[id].bottom = getMovementRule(id);
       }
 
     },

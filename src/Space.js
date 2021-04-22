@@ -6,7 +6,7 @@ export default class Space extends Component {
     render() {
 
         return (
-            <div id={this.props.id} className="board-space">
+            <div id={this.props.id} className={this.props.className}>
                 <p className="top-text">{this.props.spaceData.top}</p>
                 <p className="bottom-text">{this.props.spaceData.bottom}</p>
                 <div className="player-area">

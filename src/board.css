@@ -31,55 +31,56 @@ td {
   text-align: center;
   font-weight: bold;
   font-size: 22px;
-  color: #6d0191;
+  background-color: #6d0191;
   margin: 10px;
-  border: 3px solid #CAB4DA ;
+  /* border: 3px solid #CAB4DA ; */
   overflow: hidden;
-}
-
-td.inner {
-  background-color: #CAB4DA;
-}
-td.outer {
-  background-color: #92F1F2;
-  margin: 5px;
-}
-
-td.active {
-  cursor: pointer;
-  background: #eeffe9;
-}
-
-td.active:hover {
-  background: #eeffff;
 }
 
 div.board-space {
   color: #5D1E59;
   display: flex;
   flex-direction: column;
-  height: 25vh;
-  width: 20vw;
+  height: 27vh;
+  width: 22vw;
+}
+
+.inner {
+  background-color: #CAB4DA;
+}
+.outer {
+  background-color: #92F1F2;
+}
+
+.startlandia .top-text{
+    font-size: 58px;
+    font-weight: 900;
+}
+
+
+p {
+  font-family: 'Poiret One', cursive;
+  margin: 10px;
+  height: 10vw;
+  overflow: hidden;
+}
+
+div.empty{
+  font-size: 48px;
+}
+
+div.filled{
+  font-size: 28px;
 }
 
 div.player-area{
   display: flex;
   justify-content: space-evenly;
   align-content: flex-end;
+  height: 10vh;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 48px;
 }
 
-div#0{
-  font-size: 64px;
-}
-
-p {
-  font-family: 'Poiret One', cursive;
-  font-size: 42px; 
-  margin: 10px;
-  height: 10vw;
-  overflow: hidden;
-}

@@ -1,15 +1,17 @@
 let initSpaces = () => {
-  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'', className:'' })
-  // let i = 0;
-  // spaces[i] = {top: 'A', bottom:'A', leftLower:'A', rightLower:'A' }
-  // spaces[i+1] = {top: 'B', bottom:'B', leftLower:'B', rightLower:'B' }
+  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'', className:'', isEmpty: true })
 
   for(let i=0; i<spaces.length; i++){
-    spaces[i] = {top: 'open me', bottom:'', leftLower:'', rightLower:'', className: 'space' }
+    spaces[i] = {top: '', bottom:'open me', leftLower:'', rightLower:'', className: 'board-space outer', isEmpty: true }
   }
-  spaces[0] = {top: 'Startlandia', bottom:'~ rest here ~', leftLower:'', rightLower:'', className: 'space startlandia'}
-  spaces[5] = {top: 'switch player', bottom:'🦋', leftLower:'', rightLower:'', className: 'space switch' }
-  spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'', className: 'space dice' }
+
+  spaces[0] = {top: 'Startlandia', bottom:'~ rest here ~', leftLower:'', rightLower:'', 
+               className: 'board-space outer startlandia', isEmpty: false}
+  spaces[5] = {top: 'switch player', bottom:'🦋', leftLower:'', rightLower:'',
+               className: 'board-space inner switch', isEmpty: false }
+  spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'',
+               className: 'board-space inner dice', isEmpty: false }
+  console.log(spaces)             
   return spaces;
 }
 
@@ -52,9 +54,10 @@ const Startlandia = {
         G.dieRoll = ctx.random.D6();
         G.spaces[6].bottom = G.dieRoll;
 
-      } else if (id!==0 && G.spaces[id].bottom===''){
+      } else if (G.spaces[id].isEmpty===true){
         G.spaces[id].top = getActionRule(id);
         G.spaces[id].bottom = getMovementRule(id);
+        G.spaces[id].isEmpty = false;
       }
 
     },

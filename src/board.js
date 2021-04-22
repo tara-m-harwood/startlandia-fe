@@ -13,27 +13,9 @@ class Board extends React.Component {
     isMultiplayer: PropTypes.bool,
   };
 
-  getSpaceStyleClasses = (id) => {
-    let spaceClasses= ['space'];
-    if(id===0){
-        spaceClasses.push('startlandia')
-    } else if(id===14){
-        spaceClasses.push('inner')
-    } else {
-        spaceClasses.push('outer')
-    }
-    return spaceClasses
-  }
-
   onClick = id => {
     this.props.moves.clickCell(id);
   };
-
-  // isActive(id) {
-  //   if (!this.props.isActive) return false;
-  //   if (this.props.G.cells[id] !== null) return false;
-  //   return true;
-  // }
 
   render() {
     let tbody = [];
@@ -41,15 +23,19 @@ class Board extends React.Component {
       let cells = [];
       for (let j = 0; j < 4; j++) {
         const id = 4 * i + j;
+        let className = this.props.G.spaces[id].className
+        let contentClass = ''
+        contentClass=(this.props.G.spaces[id].isEmpty ? ' empty' : ' filled' )
+        className += contentClass
         cells.push(
           <td
             key={id}
-            className={(id===5||id===6) ? "inner" : "outer"}
             onClick={() => this.onClick(id)}
           >
             <Space
-              spaceNum={id} 
+              spaceNum={id}
               spaceData={this.props.G.spaces[id]}
+              className={className} 
               player1={this.props.G.positions.player1===id ? "🦋" : ""}
               player2={this.props.G.positions.player2===id ? "🦄" : ""}
             />
@@ -59,22 +45,11 @@ class Board extends React.Component {
       tbody.push(<tr key={i}>{cells}</tr>);
     }
 
-    // let winner = null;
-    // if (this.props.ctx.gameover) {
-    //   winner =
-    //     this.props.ctx.gameover.winner !== undefined ? (
-    //       <div id="winner">Winner: {this.props.ctx.gameover.winner}</div>
-    //     ) : (
-    //         <div id="winner">Draw!</div>
-    //       );
-    // }
-
     return (
       <div id="board-container">
         <table id="board">
           <tbody>{tbody}</tbody>
         </table>
-        {/* {winner} */}
       </div>
     );
   }

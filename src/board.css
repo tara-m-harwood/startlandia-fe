@@ -57,19 +57,33 @@ div.board-space {
     font-weight: 900;
 }
 
+.switch .top-text{
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.switch .bottom-text{
+    font-size: 84px;
+}
+
+.dice .top-text{
+    font-size: 48px;
+    font-weight: 900;
+}
 
 p {
   font-family: 'Poiret One', cursive;
   margin: 10px;
   height: 10vw;
+  font-size: 48px;
   overflow: hidden;
 }
 
-div.empty{
+div.empty p{
   font-size: 48px;
 }
 
-div.filled{
+div.filled p{
   font-size: 28px;
 }
 

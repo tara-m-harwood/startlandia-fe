@@ -42,7 +42,7 @@ const Startlandia = {
     },
 
     switchPlayer: (G, ctx) => {
-      ctx.currentPlayer==="0" ? G.spaces[5].bottom = "🦋" : G.spaces[5].bottom = "🦄"
+      ctx.currentPlayer==="0" ? G.spaces[5].bottom = "🦄" : G.spaces[5].bottom = "🦋"
       ctx.events.endTurn();
     },
 
@@ -56,7 +56,7 @@ const Startlandia = {
       G.spaces[id].isEmpty = false;
     }
 
-  },  
+  },
 
 
   // turn: { moveLimit: 1 },

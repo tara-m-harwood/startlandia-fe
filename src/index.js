@@ -15,7 +15,7 @@ import Board from "./board";
 const App = Client({
   game: Startlandia,
   board: Board,
-  // debug: false
+  debug: false
 });
 
 render(<App />, document.getElementById("root"));

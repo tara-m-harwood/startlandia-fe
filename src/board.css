@@ -76,6 +76,11 @@ div.board-space {
     font-weight: 900;
 }
 
+.dice .bottom-text{
+    font-size: 88px;
+    font-weight: 900;
+}
+
 p {
   font-family: 'Poiret One', cursive;
   margin: 10px;

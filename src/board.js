@@ -14,8 +14,6 @@ class Board extends React.Component {
   };
 
   onClick = id => {
-
-    // this.props.moves.clickCell(id)
     
     if(id===5){
       this.props.moves.switchPlayer()
@@ -26,6 +24,7 @@ class Board extends React.Component {
     } else if (this.props.G.spaces[id].isEmpty) {
       this.props.moves.occupySpace(id)
       this.props.moves.fillSpace(id)
+      this.props.moves.getRules(id)
 
     } else {
       this.props.moves.occupySpace(id)

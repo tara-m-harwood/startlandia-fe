@@ -2,26 +2,26 @@ let initSpaces = () => {
   let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'', className:'', isEmpty: true })
 
   for(let i=0; i<spaces.length; i++){
-    spaces[i] = {top: '', bottom:'open me', leftLower:'', rightLower:'', className: 'board-space outer', isEmpty: true }
+    spaces[i] = {top: '', bottom:'open', leftLower:'', rightLower:'', className: 'board-space outer', isEmpty: true }
   }
 
   spaces[0] = {top: 'Startlandia', bottom:'~ rest here ~', leftLower:'', rightLower:'', 
                className: 'board-space outer startlandia', isEmpty: false}
   spaces[5] = {top: 'switch player', bottom:'🦋', leftLower:'', rightLower:'',
                className: 'board-space inner switch', isEmpty: false }
-  spaces[6] = {top: 'roll dice', bottom:'', leftLower:'', rightLower:'',
+  spaces[6] = {top: 'roll dice', bottom:'*', leftLower:'', rightLower:'',
                className: 'board-space inner dice', isEmpty: false }
   console.log(spaces)             
   return spaces;
 }
 
-let getActionRule = () =>  {
-  return prompt("action rule", "draw a monster")
-}
+// let getActionRule = () =>  {
+//   return prompt("action rule", "draw a monster")
+// }
 
-let getMovementRule = () =>  {
-  return prompt("movement rule", "2 spaces forward")
-}
+// let getMovementRule = () =>  {
+//   return prompt("movement rule", "2 spaces forward")
+// }
 
 const Startlandia = {
   name: "startlandia",
@@ -51,36 +51,18 @@ const Startlandia = {
     },
 
     fillSpace: (G, ctx, id) => {
-      G.spaces[id].top = getActionRule(id);
-      G.spaces[id].bottom = getMovementRule(id);
+      // G.spaces[id].top = getActionRule(id);
+      // G.spaces[id].bottom = getMovementRule(id);
       G.spaces[id].isEmpty = false;
+    },
+
+    getRules: (G, ctx, id) => {
+      G.spaces[id].top = "draw a monster"
+      G.spaces[id].bottom = "2 spaces forward"
     }
 
   },
 
-
-  // turn: { moveLimit: 1 },
-
-  // endIf: (G, ctx) => {
-  //   if (IsVictory(G.cells)) {
-  //     return { winner: ctx.currentPlayer };
-  //   }
-  //   if (G.cells.filter(c => c === null).length === 0) {
-  //     return { draw: true };
-  //   }
-  // },
-
-  // ai: {
-  //   enumerate: G => {
-  //     let moves = [];
-  //     for (let i = 0; i < 9; i++) {
-  //       if (G.cells[i] === null) {
-  //         moves.push({ move: "clickCell", args: [i] });
-  //       }
-  //     }
-  //     return moves;
-  //   }
-  // }
 };
 
 export default Startlandia;

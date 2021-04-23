@@ -8,6 +8,7 @@
 
 * {
   margin: auto 0;
+  font-family: 'Poiret One', cursive;
 }
 
 #board-container {
@@ -21,23 +22,15 @@
   border-collapse: collapse;
 }
 
-#winner {
-  margin-top: 25px;
-  width: 168px;
-  text-align: center;
-}
-
 td {
   text-align: center;
   font-weight: bold;
-  font-size: 22px;
   background-color: #6d0191;
-  margin: 10px;
-  /* border: 3px solid #CAB4DA ; */
   overflow: hidden;
 }
 
 div.board-space {
+    font-family: 'Poiret One', cursive;
   color: #5D1E59;
   display: flex;
   flex-direction: column;
@@ -53,37 +46,41 @@ div.board-space {
 }
 
 .startlandia .top-text{
-    font-size: 58px;
-    font-weight: 900;
-}
-
-.startlandia .bottom-text{
+    font-family: 'Poiret One', cursive;
     font-size: 42px;
     font-weight: 900;
 }
 
+.startlandia .bottom-text{
+    font-family: 'Poiret One', cursive;
+    font-size: 36px;
+    font-weight: 900;
+}
+
 .switch .top-text{
-    font-size: 48px;
+    font-family: 'Poiret One', cursive;
+    font-size: 42px;
     font-weight: 900;
 }
 
 .switch .bottom-text{
-    font-size: 84px;
+    font-size: 60px;
 }
 
 .dice .top-text{
-    font-size: 48px;
+    font-family: 'Poiret One', cursive;
+    font-size: 42px;
     font-weight: 900;
 }
 
 .dice .bottom-text{
-    font-size: 88px;
+    font-family: 'Poiret One', cursive;
+    font-size: 60px;
     font-weight: 900;
 }
 
 p {
   font-family: 'Poiret One', cursive;
-  margin: 10px;
   height: 10vw;
   font-size: 48px;
   overflow: hidden;
@@ -94,7 +91,10 @@ div.empty p{
 }
 
 div.filled p{
-  font-size: 32px;
+  font-size: 24px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding: 5px;
+  padding-top: 10px;
 }
 
 div.player-area{
@@ -105,6 +105,6 @@ div.player-area{
 }
 
 div.player-area h1 {
-  font-size: 58px;
+  font-size: 42px;
 }
 

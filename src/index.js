@@ -9,12 +9,13 @@
 import React from "react";
 import { render } from "react-dom";
 import { Client } from "boardgame.io/react";
-import TicTacToe from "./game";
+import Startlandia from "./game";
 import Board from "./board";
 
 const App = Client({
-  game: TicTacToe,
-  board: Board
+  game: Startlandia,
+  board: Board,
+  debug: false
 });
 
 render(<App />, document.getElementById("root"));

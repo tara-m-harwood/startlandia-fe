@@ -57,6 +57,11 @@ div.board-space {
     font-weight: 900;
 }
 
+.startlandia .bottom-text{
+    font-size: 42px;
+    font-weight: 900;
+}
+
 .switch .top-text{
     font-size: 48px;
     font-weight: 900;
@@ -84,7 +89,7 @@ div.empty p{
 }
 
 div.filled p{
-  font-size: 28px;
+  font-size: 32px;
 }
 
 div.player-area{
@@ -94,7 +99,7 @@ div.player-area{
   height: 10vh;
 }
 
-h1 {
-  font-size: 48px;
+div.player-area h1 {
+  font-size: 58px;
 }
 

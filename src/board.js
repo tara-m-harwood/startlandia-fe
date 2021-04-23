@@ -14,7 +14,22 @@ class Board extends React.Component {
   };
 
   onClick = id => {
-    this.props.moves.clickCell(id);
+
+    // this.props.moves.clickCell(id)
+    
+    if(id===5){
+      this.props.moves.switchPlayer()
+
+    } else if (id===6){
+      this.props.moves.rollDie()
+
+    } else if (this.props.G.spaces[id].isEmpty) {
+      this.props.moves.occupySpace(id)
+      this.props.moves.fillSpace(id)
+
+    } else {
+      this.props.moves.occupySpace(id)
+    };
   };
 
   render() {

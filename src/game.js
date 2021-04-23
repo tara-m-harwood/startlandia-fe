@@ -35,32 +35,27 @@ const Startlandia = {
   }),
 
   moves: {
+
     rollDie: (G, ctx) => {
         G.dieRoll = ctx.random.D6();
         G.spaces[6].bottom = G.dieRoll;
     },
 
-    clickCell: (G, ctx, id) => {
-
-      if(id!==5 && id!==6){
-        ctx.currentPlayer==="0" ? G.positions.player1 = id : G.positions.player2 = id
-        ctx.currentPlayer==="0" ? G.spaces[5].bottom = "🦋" : G.spaces[5].bottom = "🦄"
-      }   
-
-      if (id===5){
-        ctx.events.endTurn();
-
-      } else if (id===6){
-        G.dieRoll = ctx.random.D6();
-        G.spaces[6].bottom = G.dieRoll;
-
-      } else if (G.spaces[id].isEmpty===true){
-        G.spaces[id].top = getActionRule(id);
-        G.spaces[id].bottom = getMovementRule(id);
-        G.spaces[id].isEmpty = false;
-      }
-
+    switchPlayer: (G, ctx) => {
+      ctx.currentPlayer==="0" ? G.spaces[5].bottom = "🦋" : G.spaces[5].bottom = "🦄"
+      ctx.events.endTurn();
     },
+
+    occupySpace: (G, ctx, id) => {
+      ctx.currentPlayer==="0" ? G.positions.player1 = id : G.positions.player2 = id
+    },
+
+    fillSpace: (G, ctx, id) => {
+      G.spaces[id].top = getActionRule(id);
+      G.spaces[id].bottom = getMovementRule(id);
+      G.spaces[id].isEmpty = false;
+    }
+
   },  
 
 

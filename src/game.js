@@ -1,27 +1,27 @@
 let initSpaces = () => {
-  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'', className:'', isEmpty: true })
+  let spaces = Array(12).fill({top: '', bottom:'', leftLower:'', rightLower:'', className:'', isEmpty: true, isAnimated: false })
 
   for(let i=0; i<spaces.length; i++){
-    spaces[i] = {top: '', bottom:'open', leftLower:'', rightLower:'', className: 'board-space outer', isEmpty: true }
+    spaces[i] = {top: '', bottom:'open', leftLower:'', rightLower:'', className: 'board-space outer', isEmpty: true, isAnimated: false }
   }
 
   spaces[0] = {top: 'Startlandia', bottom:'~ rest here ~', leftLower:'', rightLower:'', 
-               className: 'board-space outer startlandia', isEmpty: false}
+               className: 'board-space outer startlandia', isEmpty: false, isAnimated: false}
   spaces[5] = {top: 'switch player', bottom:'🦋', leftLower:'', rightLower:'',
-               className: 'board-space inner switch', isEmpty: false }
+               className: 'board-space inner switch', isEmpty: false, isAnimated: false }
   spaces[6] = {top: 'roll dice', bottom:'*', leftLower:'', rightLower:'',
-               className: 'board-space inner dice', isEmpty: false }
+               className: 'board-space inner dice', isEmpty: false, isAnimated: false }
   console.log(spaces)             
   return spaces;
 }
 
-// let getActionRule = () =>  {
-//   return prompt("action rule", "draw a monster")
-// }
+let getActionRule = () =>  {
+  return prompt("action rule", "draw a monster")
+}
 
-// let getMovementRule = () =>  {
-//   return prompt("movement rule", "2 spaces forward")
-// }
+let getMovementRule = () =>  {
+  return prompt("movement rule", "2 spaces forward")
+}
 
 const Startlandia = {
   name: "startlandia",
@@ -51,15 +51,11 @@ const Startlandia = {
     },
 
     fillSpace: (G, ctx, id) => {
-      // G.spaces[id].top = getActionRule(id);
-      // G.spaces[id].bottom = getMovementRule(id);
+      G.spaces[id].isAnimated = false;
       G.spaces[id].isEmpty = false;
+      G.spaces[id].top = getActionRule(id);
+      G.spaces[id].bottom = getMovementRule(id);
     },
-
-    getRules: (G, ctx, id) => {
-      G.spaces[id].top = "draw a monster"
-      G.spaces[id].bottom = "2 spaces forward"
-    }
 
   },
 
